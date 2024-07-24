@@ -1,11 +1,9 @@
 from django.contrib import admin
 from django.urls import path
-from django.http import JsonResponse
+from genres.views import genre_view
 
-def hello_view(request):
-    return JsonResponse({'id': '1', 'name': 'Titanic', 'year': '1999'})
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', hello_view)
+    path('genres/', genre_view, name='genre-list'),
 ]
